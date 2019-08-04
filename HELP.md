@@ -27,3 +27,8 @@ Design and implement a RESTful API (including data model and the backing impleme
 - [Logback](https://logback.qos.ch)
 - [Lombok](https://projectlombok.org)
 - [JUnit 5](https://junit.org/junit5/)
+
+## Endpoints: 
+ Please check into Swagger Documentation:
+
+## How to Run:

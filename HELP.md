@@ -1,12 +1,29 @@
-# Getting Started
+[![Build Status](https://travis-ci.org/hodorgeek/money-transfer-app.svg?branch=master)](https://travis-ci.org/hodorgeek/money-transfer-app)
 
-### Reference Documentation
-For further reference, please consider the following sections:
+# Money Transfer API
 
-* [Official Gradle documentation](https://docs.gradle.org)
+API for money transfer
 
-### Additional Links
-These additional references should also help you:
+## Overview
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+A simple REST API implementation for transferring money between two internal bank accounts
 
+
+## Task
+Design and implement a RESTful API (including data model and the backing implementation) for money transfers between accounts.
+
+### Explicit requirements:
+1. You can use Java or Kotlin.
+1. Keep it simple and to the point (e.g. no need to implement any authentication).
+1. Assume the API is invoked by multiple systems and services on behalf of end users.
+1. You can use frameworks/libraries if you like (except Spring), but don't forget about requirement #2 – keep it simple and avoid heavy frameworks.
+1. The data store should run in-memory for the sake of this test.
+1. The final result should be executable as a standalone program (should not require a pre-installed container/server).
+1. Demonstrate with tests that the API works as expected.
+
+## Technology stack
+- Java 8
+- [Gradle](https://docs.gradle.org)
+- [Logback](https://logback.qos.ch)
+- [Lombok](https://projectlombok.org)
+- [JUnit 5](https://junit.org/junit5/)

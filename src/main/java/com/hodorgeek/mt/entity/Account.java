@@ -1,18 +1,21 @@
 package com.hodorgeek.mt.entity;
 
 import com.hodorgeek.mt.exception.InsufficientBalanceException;
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-@Entity(name = "account")
 @Getter
 @Setter
 @ToString(exclude = {"customer", "lock"})
 @EqualsAndHashCode(exclude = {"customer", "lock"})
+@Entity(name = "account")
 public class Account {
 
     @Transient

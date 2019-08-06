@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(name = "customer")
 @ToString
 @EqualsAndHashCode
+@Entity(name = "customer")
 public class Customer {
 
     @Id

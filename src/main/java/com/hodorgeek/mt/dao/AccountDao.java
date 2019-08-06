@@ -7,9 +7,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface AccountDao {
-    List<Account> getAccounts(UUID clientId);
+    List<Account> getAccounts(UUID customerId);
 
-    Optional<Account> getAccount(UUID clientId, Long accountId);
+    Optional<Account> getAccount(UUID customerId, Long accountId);
 
     Optional<Account> getAccount(Long accountId);
 

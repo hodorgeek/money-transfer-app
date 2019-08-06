@@ -20,13 +20,13 @@ public class AccountServiceImpl implements AccountService {
 
 
     @Override
-    public List<Account> getAccounts(UUID clientId) {
-        return accountDao.getAccounts(clientId);
+    public List<Account> getAccounts(UUID customerId) {
+        return accountDao.getAccounts(customerId);
     }
 
     @Override
-    public Account getAccount(UUID clientId, Long accountId) {
-        return accountDao.getAccount(clientId, accountId)
+    public Account getAccount(UUID customerId, Long accountId) {
+        return accountDao.getAccount(customerId, accountId)
                 .orElseThrow(() -> new AccountNotFoundException(
                         String.format("Account with id: %s cannot be found", accountId)));
     }

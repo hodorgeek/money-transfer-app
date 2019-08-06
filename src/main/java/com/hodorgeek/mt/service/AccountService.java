@@ -7,8 +7,8 @@ import java.util.UUID;
 
 public interface AccountService {
 
-    List<Account> getAccounts(UUID clientId);
+    List<Account> getAccounts(UUID customerId);
 
-    Account getAccount(UUID clientId, Long accountId);
+    Account getAccount(UUID customerId, Long accountId);
 
 }

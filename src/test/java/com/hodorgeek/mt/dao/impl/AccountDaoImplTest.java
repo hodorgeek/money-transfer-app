@@ -42,7 +42,7 @@ class AccountDaoImplTest extends GenericDaoIntegrationTest {
     }
 
     @Test
-    public void returnsAllAccountsForGivenClient() {
+    public void returnsAllAccountsForGivenCustomer() {
         // given
         Account a1 = anAccount().withBalance(BigDecimal.ZERO).build();
         Account a2 = anAccount().withBalance(BigDecimal.TEN).build();
@@ -61,7 +61,7 @@ class AccountDaoImplTest extends GenericDaoIntegrationTest {
     }
 
     @Test
-    public void returnsEmptyListWhenNoAccountsForGivenClient() {
+    public void returnsEmptyListWhenNoAccountsForGivenCustomer() {
         // when
         List<Account> accounts = underTest.getAccounts(UUID.randomUUID());
 
@@ -70,7 +70,7 @@ class AccountDaoImplTest extends GenericDaoIntegrationTest {
     }
 
     @Test
-    public void returnsOptionalWithSingleAccountForGivenClient() {
+    public void returnsOptionalWithSingleAccountForGivenCustomer() {
         // given
         Account a = anAccount()
                 .withBalance(BigDecimal.ZERO)
@@ -92,10 +92,10 @@ class AccountDaoImplTest extends GenericDaoIntegrationTest {
     public void returnsEmptyOptionalWhenAccountNotFound() {
         // given
         long nonExistingAccountId = 0L;
-        UUID clientId = UUID.randomUUID();
+        UUID customerId = UUID.randomUUID();
 
         // when
-        Optional<Account> actual = underTest.getAccount(clientId, nonExistingAccountId);
+        Optional<Account> actual = underTest.getAccount(customerId, nonExistingAccountId);
 
         // then
         assertThat(actual.isPresent()).isFalse();

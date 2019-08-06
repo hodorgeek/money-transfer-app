@@ -35,11 +35,11 @@ class AccountServiceImplTest {
     @Test
     public void returnsEmptyAccountListWhenNoAccountsForGivenCustomer() {
         // given
-        UUID clientId = UUID.randomUUID();
-        when(accountDao.getAccounts(clientId)).thenReturn(Collections.emptyList());
+        UUID customerId = UUID.randomUUID();
+        when(accountDao.getAccounts(customerId)).thenReturn(Collections.emptyList());
 
         // when
-        List<Account> actual = accountService.getAccounts(clientId);
+        List<Account> actual = accountService.getAccounts(customerId);
 
         // then
         assertThat(actual).isEmpty();
@@ -48,7 +48,7 @@ class AccountServiceImplTest {
     @Test
     public void returnsAllAccountsForGivenCustomer() {
         // given
-        UUID clientId = UUID.randomUUID();
+        UUID customerId = UUID.randomUUID();
         Account a1 = anAccount()
                 .withId(1L)
                 .withBalance(BigDecimal.ZERO)
@@ -58,10 +58,10 @@ class AccountServiceImplTest {
                 .withBalance(BigDecimal.TEN)
                 .build();
         List<Account> accounts = ImmutableList.of(a1, a2);
-        when(accountDao.getAccounts(clientId)).thenReturn(accounts);
+        when(accountDao.getAccounts(customerId)).thenReturn(accounts);
 
         // when
-        List<Account> actual = accountService.getAccounts(clientId);
+        List<Account> actual = accountService.getAccounts(customerId);
 
         // then
         assertThat(actual).containsExactlyInAnyOrder(a1, a2);
@@ -70,16 +70,16 @@ class AccountServiceImplTest {
     @Test
     public void returnsSingleAccountForGivenCustomer() {
         // given
-        UUID clientId = UUID.randomUUID();
+        UUID customerId = UUID.randomUUID();
         long accountId = 1L;
         Account a = anAccount()
                 .withId(accountId)
                 .withBalance(BigDecimal.TEN)
                 .build();
-        when(accountDao.getAccount(clientId, 1L)).thenReturn(Optional.of(a));
+        when(accountDao.getAccount(customerId, 1L)).thenReturn(Optional.of(a));
 
         // when
-        Account actual = accountService.getAccount(clientId, accountId);
+        Account actual = accountService.getAccount(customerId, accountId);
 
         // then
         assertThat(actual).isEqualTo(a);

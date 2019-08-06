@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Slf4j
-public class CustomerDaoImpl  implements CustomerDao {
+public class CustomerDaoImpl implements CustomerDao {
 
     private final Provider<EntityManager> entityManager;
 
@@ -38,7 +38,7 @@ public class CustomerDaoImpl  implements CustomerDao {
         try {
             return Optional.of(query.getSingleResult());
         } catch (NoResultException e) {
-            log.warn("No client with id: {}", id);
+            log.warn("No customer with id: {}", id);
         }
         return Optional.empty();
     }

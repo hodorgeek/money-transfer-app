@@ -5,6 +5,7 @@ import com.hodorgeek.mt.entity.Customer;
 import com.hodorgeek.mt.exception.CustomerNotFoundException;
 import com.hodorgeek.mt.service.CustomerService;
 
+import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -12,6 +13,11 @@ import java.util.UUID;
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerDao customerDao;
+
+    @Inject
+    public CustomerServiceImpl(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
 
     @Override
     public List<Customer> getCustomers() {

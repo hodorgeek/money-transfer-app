@@ -3,8 +3,8 @@ plugins {
     id 'idea'
     id 'application'
     id 'jacoco'
+    id "com.github.johnrengelman.shadow" version '5.1.0'
 }
-
 
 group = 'com.hodorgeek.mt'
 version = '0.0.1-SNAPSHOT'
@@ -14,6 +14,28 @@ mainClassName = 'com.hodorgeek.mt.MoneyTransferApplication'
 repositories {
     mavenCentral()
 }
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/java'
+        }
+    }
+
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+    }
+}
+
+shadowJar {
+    baseName = 'money-transfer-app'
+    classifier = null
+    version = 1.0
+}
+
 
 dependencies {
 
@@ -27,13 +49,25 @@ dependencies {
     implementation 'org.hibernate:hibernate-core:5.2.16.Final'
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'org.slf4j:slf4j-simple:1.7.25'
+    implementation 'com.google.code.gson:gson:2.8.5'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.5.1'
     testImplementation 'org.mockito:mockito-junit-jupiter:3.0.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:3.0.0'
     testImplementation 'org.assertj:assertj-core:3.10.0'
+
+    testCompile 'io.cucumber:cucumber-java:2.4.0'
+    testCompile 'io.cucumber:cucumber-junit:2.4.0'
+    testCompile 'io.rest-assured:rest-assured:3.0.6'
 }
 
+
+run {
+    if (project.hasProperty("loadData")) {
+        args([true])
+    }
+}
 
 jacocoTestReport {
     reports {
@@ -44,6 +78,13 @@ jacocoTestReport {
 
 test {
     useJUnitPlatform()
+
+    if (project.hasProperty("acceptanceTest")) {
+        exclude '**/*com/*'
+    } else {
+        exclude '**/*featureTest*'
+    }
+
     testLogging {
         events "passed", "skipped", "failed"
     }

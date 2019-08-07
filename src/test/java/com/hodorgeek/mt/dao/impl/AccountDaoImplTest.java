@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.hodorgeek.mt.DataLoader.AccountBuilder.anAccount;
-import static com.hodorgeek.mt.DataLoader.CustomerBuilder.aCustomer;
+import static com.hodorgeek.mt.app.DataLoader.AccountBuilder.anAccount;
+import static com.hodorgeek.mt.app.DataLoader.CustomerBuilder.aCustomer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 

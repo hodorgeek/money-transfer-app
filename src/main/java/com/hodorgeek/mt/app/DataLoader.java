@@ -1,4 +1,4 @@
-package com.hodorgeek.mt;
+package com.hodorgeek.mt.app;
 
 import com.google.inject.persist.Transactional;
 import com.hodorgeek.mt.entity.Account;
@@ -12,8 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import static com.hodorgeek.mt.DataLoader.AccountBuilder.*;
-import static com.hodorgeek.mt.DataLoader.CustomerBuilder.*;
+import static com.hodorgeek.mt.app.DataLoader.AccountBuilder.*;
+import static com.hodorgeek.mt.app.DataLoader.CustomerBuilder.*;
 
 public class DataLoader {
 

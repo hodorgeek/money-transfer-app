@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.hodorgeek.mt.DataLoader.AccountBuilder.anAccount;
+import static com.hodorgeek.mt.app.DataLoader.AccountBuilder.anAccount;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;

@@ -18,7 +18,6 @@ public class AccountServiceImpl implements AccountService {
         this.accountDao = accountDao;
     }
 
-
     @Override
     public List<Account> getAccounts(UUID customerId) {
         return accountDao.getAccounts(customerId);

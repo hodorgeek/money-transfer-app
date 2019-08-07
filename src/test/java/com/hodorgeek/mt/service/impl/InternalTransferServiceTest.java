@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static com.hodorgeek.mt.DataLoader.AccountBuilder.anAccount;
+import static com.hodorgeek.mt.app.DataLoader.AccountBuilder.anAccount;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;

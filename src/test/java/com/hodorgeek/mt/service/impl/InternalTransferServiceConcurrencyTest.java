@@ -15,8 +15,8 @@ import java.util.Collection;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 
-import static com.hodorgeek.mt.DataLoader.AccountBuilder.anAccount;
-import static com.hodorgeek.mt.DataLoader.CustomerBuilder.aCustomer;
+import static com.hodorgeek.mt.app.DataLoader.AccountBuilder.anAccount;
+import static com.hodorgeek.mt.app.DataLoader.CustomerBuilder.aCustomer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class InternalTransferServiceConcurrencyTest extends GenericDaoIntegrationTest {

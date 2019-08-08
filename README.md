@@ -23,12 +23,12 @@ Design and implement a RESTful API (including data model and the backing impleme
 - Java 8
 - [Gradle](https://docs.gradle.org)
 - [Lombok](https://projectlombok.org)
-- Juice
-- H2
+- [Guice](https://github.com/google/guice)
+- [H2](https://www.h2database.com/html/main.html)
 - JPA over Hibernate
-- Spark
+- [Spark](http://sparkjava.com/)
 - [JUnit 5](https://junit.org/junit5/)
-- Cucumber
+- [Cucumber](https://cucumber.io/)
 
 
 ## Unit Tests
@@ -36,7 +36,7 @@ Design and implement a RESTful API (including data model and the backing impleme
 - To execute unit test(junit5) use: ```./gradlew test```
 
 ## Feature Tests / API Acceptance Test:
-- To run api acceptance test(cucmber test) use, ``` ./gradlew test -P acceptanceTest``` 
+- To run API acceptance test(cucumber test) use, ``` ./gradlew test -P acceptanceTest``` 
 
 ### Real life test scenarios for endpoints:
 * `/api/customers` - [see here](src/test/resources/features/customers_accounts.feature)

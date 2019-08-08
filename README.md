@@ -27,6 +27,8 @@ Design and implement a RESTful API (including data model and the backing impleme
 - [H2](https://www.h2database.com/html/main.html)
 - JPA over Hibernate
 - [Spark](http://sparkjava.com/)
+- [Slf4J](https://www.slf4j.org/)
+- [Gson](https://github.com/google/gson)
 - [JUnit 5](https://junit.org/junit5/)
 - [Cucumber](https://cucumber.io/)
 
